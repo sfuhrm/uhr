@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 
 /**
  * Some tests for the {@link Uhr} class.
- * @author stephan
+ * @author Stephan Fuhrmann
  */
 public class UhrTest {
 	@Test
