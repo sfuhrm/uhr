@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 /**
  * A Swing based analog clock.
@@ -127,7 +128,7 @@ public class Uhr extends JPanel {
 			@Override
 			public void run() {
 				while (true) {
-					uhr.repaint();
+					SwingUtilities.invokeLater(uhr::repaint);
 					try {
 						long now = System.currentTimeMillis();
 						sleep(1000-(now % 1000));
