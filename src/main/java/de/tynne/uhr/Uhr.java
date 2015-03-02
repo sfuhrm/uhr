@@ -103,8 +103,8 @@ public class Uhr extends JPanel {
 	 * @param end the end position of the line in the given angle. Must be between 0 and 1. Can be 0.0 if it is in the center or 1.0 if it is on the radius.
 	 */
 	private static void drawCircleLine(Graphics2D g, double r, int cx, int cy, double fraction, double of, double start, double end) {
-		int dx = (int) (r * Math.sin(2. * Math.PI * fraction / of));
-		int dy = -(int) (r * Math.cos(2. * Math.PI * fraction / of));
+		double dx =   (r * Math.sin(2. * Math.PI * fraction / of));
+		double dy = - (r * Math.cos(2. * Math.PI * fraction / of));
 
 		int sx = (int)(cx + start * dx);
 		int sy = (int)(cy + start * dy);
