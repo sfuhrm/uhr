@@ -23,10 +23,10 @@ public class Uhr extends JPanel {
 		
 		super.paint(g);
 		
-		int w = getWidth();
-		int h = getHeight();
-		int cx = w / 2;
-		int cy = h / 2;
+		int w = getWidth() - INNER_BORDER*2;
+		int h = getHeight() - INNER_BORDER*2;
+		int cx = w / 2 + INNER_BORDER;
+		int cy = h / 2 + INNER_BORDER;
 				
 		GregorianCalendar gregorianCalendar = new GregorianCalendar();
 		int hour = gregorianCalendar.get(Calendar.HOUR);
@@ -56,6 +56,8 @@ public class Uhr extends JPanel {
 	private final float HOURS_STROKE = 4f;
 	private final float HOUR_TICKS_STROKE = 4f;
 	private final float MINUTE_TICKS_STROKE = 1f;
+	
+	private final int INNER_BORDER = 2;
 	
 	/**
 	 * Draws the clock.
