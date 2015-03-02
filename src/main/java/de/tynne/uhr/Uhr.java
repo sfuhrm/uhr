@@ -45,7 +45,7 @@ public class Uhr extends JPanel {
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g2d.setRenderingHints(rh);
 		
-		drawClock(g2d, cx, r, cy, sec, min, hour);
+		drawClock(g2d, r, cx, cy, sec, min, hour);
 	}
 
 	/**
@@ -58,76 +58,60 @@ public class Uhr extends JPanel {
 	 * @param minutes minutes (0..59)
 	 * @param hours hours (0..11)
 	 */
-	private void drawClock(Graphics2D g2d, int r, int cx, int cy, int seconds, int minutes, int hours) {
+	private void drawClock(Graphics2D g2d, int r, int cx, int cy, int seconds, int minutes, int hours) {		
 		// draw background circle
 		g2d.setColor(Color.LIGHT_GRAY);
 		g2d.fillOval(cx - r, cy - r, 2*r, 2*r);
 		
 		// minute/second ticks
 		g2d.setColor(Color.DARK_GRAY);
+		g2d.setStroke(new BasicStroke(1f));
 		for (int i=0; i < 60; i++) {
-			drawTick(g2d, r, i, 60, 2, 0.05f);
+			drawCircleLine(g2d, r, cx, cy, i, 60, 1f-0.05f, 1f);
 		}		
 		
 		// hour ticks
 		g2d.setColor(Color.DARK_GRAY);
+		g2d.setStroke(new BasicStroke(4f));
 		for (int i=0; i < 12; i++) {
-			drawTick(g2d, r, i, 12, 4, 0.2f);
+			drawCircleLine(g2d, r, cx, cy, i, 12, 1f-0.2f, 1f);
 		}
 		
 		// seconds
 		g2d.setColor(new Color(0f, 0f , 1f, 0.6f));
-		drawArm(g2d, r, seconds, 60, 2.1f);
+		g2d.setStroke(new BasicStroke(2.1f));
+		drawCircleLine(g2d, r, cx, cy, seconds, 60, 0., 1f);
 		// minutes
 		g2d.setColor(new Color(0f, 0f , 0f, 0.9f));
-		drawArm(g2d, r*0.9, minutes, 60, 4.0f);
+		g2d.setStroke(new BasicStroke(4));
+		drawCircleLine(g2d, r, cx, cy, minutes, 60, 0., 0.9);
 		// hours
 		g2d.setColor(new Color(1f, 0f , 0f, 0.9f));
-		drawArm(g2d, r*0.80, hours + minutes  / 60., 12, 4.0f);				
+		g2d.setStroke(new BasicStroke(4));
+		drawCircleLine(g2d, r, cx, cy, hours + minutes  / 60., 12, 0., 0.8);
 	}
 	
 	/**
-	 * Draws a clocks tick. The ticks are markers giving a hint on the
-	 * position of the full hour / minute.
-	 * @param g graphics context to draw on
-	 * @param r circle radius
-	 * @param fraction fraction of <code>of</code>
-	 * @param of total amount of units (for example 60 for seconds)
-	 * @param width the pixel width of the ticks.
-	 * @param length the l
-	 * ength in fractions (0..1) 
+	 * Draws a line with a given angle in the circle.
+	 * @param g graphics context to draw on.
+	 * @param r the total circle radius.
+	 * @param cx the circle center x coordinate in the JPanel component.
+	 * @param cy the circle center y coordinate in the JPanel component.
+	 * @param fraction fraction of <code>of</code>. Could be 5 for 5 hours of 12.
+	 * @param of total amount of units (for example 12 for 12 hours)
+	 * @param start the start position of the line in the given angle. Must be between 0 and 1. Can be 0.0 if it is in the center or 1.0 if it is on the radius.
+	 * @param end the end position of the line in the given angle. Must be between 0 and 1. Can be 0.0 if it is in the center or 1.0 if it is on the radius.
 	 */
-	private void drawTick(Graphics2D g, double r, double fraction, double of, float width, float length) {
-		int w = getWidth();
-		int h = getHeight();
-		int cx = w / 2;
-		int cy = h / 2;
-		
+	private void drawCircleLine(Graphics2D g, double r, int cx, int cy, double fraction, double of, double start, double end) {
 		int dx = (int) (r * Math.sin(2. * Math.PI * fraction / of));
 		int dy = -(int) (r * Math.cos(2. * Math.PI * fraction / of));
 
-		g.setStroke(new BasicStroke(width));
-		g.drawLine((int)(cx + dx * (1.-length)), (int)(cy + dy * (1.-length)), cx + dx, cy + dy);
-	}	
-	
-	/**
-	 * Draws a clocks arm. The arms show the time. 
-	 * @param g graphics context to draw on
-	 * @param r arm length / radius
-	 * @param fraction fraction of <code>of</code>
-	 * @param of total amount of units (for example 60 for seconds)
-	 */
-	private void drawArm(Graphics2D g, double r, double fraction, double of, float width) {
-		int w = getWidth();
-		int h = getHeight();
-		int cx = w / 2;
-		int cy = h / 2;
+		int sx = (int)(cx + start * dx);
+		int sy = (int)(cy + start * dy);
+		int ex = (int)(cx + end * dx);
+		int ey = (int)(cy + end * dy);
 		
-		int dx = (int) (r * Math.sin(2. * Math.PI * fraction / of));
-		int dy = -(int) (r * Math.cos(2. * Math.PI * fraction / of));
-
-		g.setStroke(new BasicStroke(width));
-		g.drawLine(cx, cy, cx + dx, cy + dy);
+		g.drawLine(sx, sy, ex, ey);
 	}
 	
 	public static void main(String args[]) {
