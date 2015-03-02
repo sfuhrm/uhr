@@ -33,12 +33,7 @@ public class Uhr extends JPanel {
 		int min = gregorianCalendar.get(Calendar.MINUTE);
 		int sec = gregorianCalendar.get(Calendar.SECOND);
 		
-		int r;
-		if (w > h) {
-			r = h / 2;
-		} else {			
-			r = w / 2;
-		}
+		int r = Math.min(h, w) / 2;
 		
 		Graphics2D g2d = (Graphics2D) g;
 		RenderingHints rh = new RenderingHints(
