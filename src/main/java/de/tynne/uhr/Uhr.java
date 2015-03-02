@@ -74,20 +74,12 @@ public class Uhr extends JPanel {
 		g2d.setColor(BACKGROUND_CIRCLE_COLOR);
 		g2d.fillOval(cx - r, cy - r, 2*r, 2*r);
 		
-		// minute/second ticks
-		g2d.setColor(MINUTE_TICKS_COLOR);
-		g2d.setStroke(new BasicStroke(MINUTE_TICKS_STROKE));
-		for (int i=0; i < 60; i++) {
-			drawCircleLine(g2d, r, cx, cy, i, 60, 1f-0.05f, 1f);
-		}		
+		drawTicks(g2d, r, cx, cy);		
 		
-		// hour ticks
-		g2d.setColor(HOUR_TICKS_COLOR);
-		g2d.setStroke(new BasicStroke(HOUR_TICKS_STROKE));
-		for (int i=0; i < 12; i++) {
-			drawCircleLine(g2d, r, cx, cy, i, 12, 1f-0.2f, 1f);
-		}
-		
+		drawArms(g2d, r, cx, cy, seconds, minutes, hours);
+	}
+
+	private void drawArms(Graphics2D g2d, int r, int cx, int cy, int seconds, int minutes, int hours) {
 		// seconds
 		g2d.setColor(SECONDS_ARM_COLOR);
 		g2d.setStroke(new BasicStroke(SECONDS_STROKE));
@@ -100,6 +92,22 @@ public class Uhr extends JPanel {
 		g2d.setColor(HOURS_ARM_COLOR);
 		g2d.setStroke(new BasicStroke(HOURS_STROKE));
 		drawCircleLine(g2d, r, cx, cy, hours + minutes  / 60., 12, 0., 0.8);
+	}
+
+	private void drawTicks(Graphics2D g2d, int r, int cx, int cy) {
+		// minute/second ticks
+		g2d.setColor(MINUTE_TICKS_COLOR);
+		g2d.setStroke(new BasicStroke(MINUTE_TICKS_STROKE));
+		for (int i=0; i < 60; i++) {
+			drawCircleLine(g2d, r, cx, cy, i, 60, 1f-0.05f, 1f);
+		}
+		
+		// hour ticks
+		g2d.setColor(HOUR_TICKS_COLOR);
+		g2d.setStroke(new BasicStroke(HOUR_TICKS_STROKE));
+		for (int i=0; i < 12; i++) {
+			drawCircleLine(g2d, r, cx, cy, i, 12, 1f-0.2f, 1f);
+		}
 	}
 	
 	/**
