@@ -1,4 +1,4 @@
-package de.tynne.uhr;
+package de.sfuhrm.uhr;
 
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;

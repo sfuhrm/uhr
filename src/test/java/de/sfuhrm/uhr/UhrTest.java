@@ -1,5 +1,6 @@
-package de.tynne.uhr;
+package de.sfuhrm.uhr;
 
+import de.sfuhrm.uhr.Uhr;
 import java.awt.Graphics2D;
 import org.junit.Test;
 import static org.mockito.Mockito.*;

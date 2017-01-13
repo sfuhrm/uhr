@@ -18,6 +18,10 @@ It can be executed in the command line with the following call:
 
     $ java -jar target/Uhr-1.0-SNAPSHOT.jar 
 
+## Author
+
+Written 2015 by Stephan Fuhrmann.
+
 ## License
 
 The tool is licensed under [GPL 2.0](LICENSE).
