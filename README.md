@@ -1,5 +1,7 @@
 # uhr
 
+![Travis CI Status](https://travis-ci.org/sfuhrm/uhr.svg?branch=master)
+
 ![Screenshot of Uhr](https://raw.githubusercontent.com/sfuhrm/uhr/master/pictures/screenshot.png)
 
 Analogue clock application in Java Swing. 
