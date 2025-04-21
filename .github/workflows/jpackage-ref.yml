@@ -32,4 +32,6 @@ jobs:
       jpackage_linux_deb_app_category: gnome
       jpackage_linux_rpm_app_category: utilities
       jpackage_win_upgrade_uuid: 47f95ddc-1ed8-11f0-88dc-3fbe170393f3
-      jpackage_additional_options: "--resource-dir target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/resources/"
+      jpackage_additional_options: |
+        --resource-dir target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/resources/ \
+        --icon target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/resources/uhr.png
