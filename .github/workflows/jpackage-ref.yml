@@ -26,7 +26,7 @@ jobs:
       jpackage_license: target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/LICENSE
       jpackage_vendor: Stephan Fuhrmann
       jpackage_copyright: Stephan Fuhrmann
-      jpackage_description: Analog clock
+      jpackage_description: Graphical analog clock for the desktop
       jpackage_mainclass: de.sfuhrm.uhr.Uhr
       jpackage_linux_deb_maintainer: s@sfuhrm.de
       jpackage_linux_app_category: misc
