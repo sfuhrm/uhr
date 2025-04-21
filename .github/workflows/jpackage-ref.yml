@@ -19,6 +19,7 @@ jobs:
     uses: sfuhrm/github_workflows/.github/workflows/maven.yml@main
     with:
       java_version: 21
+      artifact_name: jpackage
       jpackage_input: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}
       jpackage_name: uhr
       jpackage_jarfile: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}/Uhr-${{ needs.maven_version.expression_value }}.jar
