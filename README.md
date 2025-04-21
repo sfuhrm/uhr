@@ -1,6 +1,6 @@
 uhr
 ===================
-![Travis CI Status](https://travis-ci.org/sfuhrm/uhr.svg?branch=master)
+[![Java CI with Maven](https://github.com/sfuhrm/uhr/actions/workflows/maven-ref.yml/badge.svg)](https://github.com/sfuhrm/uhr/actions/workflows/maven-ref.yml)
 
 ![Screenshot of Uhr](https://raw.githubusercontent.com/sfuhrm/uhr/master/pictures/screenshot.png)
 
