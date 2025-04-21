@@ -6,11 +6,10 @@
     <version>1.0-SNAPSHOT</version>
     <name>Uhr</name>
     <description>An analogue clock for the desktop</description>
-    <description>Sudoku Parent POM</description>
-    <url>https://github.com/sfuhrm/sudoku</url>
+    <url>https://github.com/sfuhrm/uhr</url>
     <scm>
-        <url>git@github.com:sfuhrm/sudoku.git</url>
-        <connection>scm:git:git@github.com:sfuhrm/sudoku.git</connection>
+        <url>git@github.com:sfuhrm/uhr.git</url>
+        <connection>scm:git:git@github.com:sfuhrm/uhr.git</connection>
         <tag>HEAD</tag>
     </scm>
     <licenses>
