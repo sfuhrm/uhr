@@ -29,5 +29,6 @@ jobs:
       jpackage_description: Graphical analog clock for the desktop
       jpackage_mainclass: de.sfuhrm.uhr.Uhr
       jpackage_linux_deb_maintainer: s@sfuhrm.de
-      jpackage_linux_app_category: utilities
+      jpackage_linux_deb_app_category: gnome
+      jpackage_linux_rpm_app_category: utilities
       jpackage_win_upgrade_uuid: 47f95ddc-1ed8-11f0-88dc-3fbe170393f3
