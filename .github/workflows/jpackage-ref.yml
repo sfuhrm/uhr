@@ -19,10 +19,10 @@ jobs:
     uses: sfuhrm/github_workflows/.github/workflows/maven.yml@main
     with:
       java_version: 21
-      jpackage_input: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}
+      jpackage_input: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}
       jpackage_name: uhr
-      jpackage_jarfile: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}/Uhr-${{ maven_version.expression_value }}.jar
-      jpackage_license: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}/LICENSE
+      jpackage_jarfile: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}/Uhr-${{ needs.maven_version.expression_value }}.jar
+      jpackage_license: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}/LICENSE
       jpackage_vendor: Stephan Fuhrmann
       jpackage_copyright: Stephan Fuhrmann
       jpackage_description: Analog clock
