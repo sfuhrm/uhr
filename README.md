@@ -1,6 +1,7 @@
 uhr
 ===================
 [![Java CI with Maven](https://github.com/sfuhrm/uhr/actions/workflows/maven-ref.yml/badge.svg)](https://github.com/sfuhrm/uhr/actions/workflows/maven-ref.yml)
+[![License](https://img.shields.io/badge/License-GNU%20GPL-blue)](https://www.gnu.org/licenses/old-licenses/gpl-2.0)
 
 ![Screenshot of Uhr](https://raw.githubusercontent.com/sfuhrm/uhr/master/pictures/screenshot.png)
 
