@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<assembly>
+  <!-- see http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html -->
+  <id>app</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.basedir}</directory>
+      <outputDirectory>${assembly.dir}</outputDirectory>
+      <includes>
+        <include>README.md</include>
+        <include>LICENSE</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target</directory>
+      <outputDirectory>${assembly.dir}/lib</outputDirectory>
+      <excludes>
+        <exclude>*-javadoc.jar</exclude>
+        <exclude>*-sources.jar</exclude>
+      </excludes>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>${assembly.dir}/lib</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+    </dependencySet>
+  </dependencySets>
+</assembly>

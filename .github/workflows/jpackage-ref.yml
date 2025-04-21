@@ -14,6 +14,22 @@ jobs:
     with:
       java_version: 21
       expression: project.version
+  call-maven:
+    needs: maven_version
+    uses: sfuhrm/github_workflows/.github/workflows/maven.yml@main
+    with:
+      java_version: 21
+      jpackage_input: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}
+      jpackage_name: uhr
+      jpackage_jarfile: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}/Uhr-${{ maven_version.expression_value }}.jar
+      jpackage_license: target/Uhr-${{ maven_version.expression_value }}-app/Uhr-${{ maven_version.expression_value }}/LICENSE
+      jpackage_vendor: Stephan Fuhrmann
+      jpackage_copyright: Stephan Fuhrmann
+      jpackage_description: Analog clock
+      jpackage_mainclass: de.sfuhrm.uhr.Uhr
+      jpackage_linux_deb_maintainer: s@sfuhrm.de
+      jpackage_linux_app_category: misc
+      jpackage_win_upgrade_uuid: 47f95ddc-1ed8-11f0-88dc-3fbe170393f3
   call-jpackage:
     needs: maven_version
     uses: sfuhrm/github_workflows/.github/workflows/jpackage.yml@main
