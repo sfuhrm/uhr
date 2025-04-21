@@ -20,10 +20,10 @@ jobs:
     with:
       java_version: 21
       artifact_name: jpackage
-      jpackage_input: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}
+      jpackage_input: target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}
       jpackage_name: uhr
-      jpackage_jarfile: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}/Uhr-${{ needs.maven_version.expression_value }}.jar
-      jpackage_license: target/Uhr-${{ needs.maven_version.expression_value }}-app/Uhr-${{ needs.maven_version.expression_value }}/LICENSE
+      jpackage_jarfile: target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/Uhr-${{ needs.maven_version.outputs.expression_value }}.jar
+      jpackage_license: target/Uhr-${{ needs.maven_version.outputs.expression_value }}-app/Uhr-${{ needs.maven_version.outputs.expression_value }}/LICENSE
       jpackage_vendor: Stephan Fuhrmann
       jpackage_copyright: Stephan Fuhrmann
       jpackage_description: Analog clock
