@@ -1,11 +1,6 @@
 package de.sfuhrm.uhr;
 
-import java.awt.BasicStroke;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
@@ -135,6 +130,7 @@ public class Uhr extends JPanel {
 	
 	public static void main(String args[]) {
 		JFrame frame = new JFrame("Uhr");
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Uhr.class.getResource("/uhr.png")));
 		final Uhr uhr = new Uhr();
 		frame.setLayout(new BorderLayout());
 		frame.getContentPane().add(uhr);
