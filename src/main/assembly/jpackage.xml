@@ -17,7 +17,7 @@
     </fileSet>
     <fileSet>
       <directory>${project.basedir}/src/main/desktop</directory>
-      <outputDirectory>${assembly.dir}</outputDirectory>
+      <outputDirectory>${assembly.dir}/resources</outputDirectory>
       <includes>
         <include>uhr.png</include>
         <include>uhr.desktop</include>
