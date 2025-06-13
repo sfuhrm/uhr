@@ -16,14 +16,18 @@ Use the following command line:
 
 ## Running it
 
-The build step described above produces an executable Jar archive.
-It can be executed in the command line with the following call:
+Download one of the readily built installable files for your machine [here](https://github.com/sfuhrm/uhr/releases).
 
-    $ java -jar target/Uhr-1.0-SNAPSHOT.jar 
+After that the application is either displayed in your operating systems application menus, or
+you need to start the application by entering this in your command line:
+
+```
+$ uhr
+```
 
 ## Author
 
-Written 2015 by Stephan Fuhrmann.
+Written 2015/2025 by Stephan Fuhrmann.
 
 ## License
 
